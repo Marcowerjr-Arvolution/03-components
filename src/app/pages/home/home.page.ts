@@ -28,6 +28,16 @@ export class HomePage implements OnInit {
       name: 'Avatar',
       redirectTo: '/avatar',
     },
+    {
+      icon: 'radio-button-off-outline',
+      name: 'Buttons',
+      redirectTo: '/button',
+    },
+    {
+      icon: 'card-outline',
+      name: 'Cards',
+      redirectTo: '/card',
+    },
   ];
 
   constructor() {}
