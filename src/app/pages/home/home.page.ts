@@ -38,6 +38,16 @@ export class HomePage implements OnInit {
       name: 'Cards',
       redirectTo: '/card',
     },
+    {
+      icon: 'checkmark-circle-outline',
+      name: 'Checkboxes',
+      redirectTo: '/check',
+    },
+    {
+      icon: 'calendar-outline',
+      name: 'Date Time',
+      redirectTo: '/date-time',
+    },
   ];
 
   constructor() {}

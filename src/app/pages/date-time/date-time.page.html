@@ -1,0 +1,92 @@
+<app-header title="Date Time"></app-header>
+
+<ion-content class="ion-padding">
+  <ion-list>
+    <ion-list-header>
+      <ion-label>Birth Info</ion-label>
+    </ion-list-header>
+    <ion-list>
+      <ion-item>
+        <ion-label>Birth Date</ion-label>
+        <ion-datetime-button datetime="datetime"></ion-datetime-button>
+      </ion-item>
+      <ion-modal [keepContentsMounted]="true">
+        <ng-template>
+          <ion-datetime
+            id="datetime"
+            (ionChange)="dateChange($event)"
+          ></ion-datetime>
+        </ng-template>
+      </ion-modal>
+    </ion-list>
+
+    <ion-list-header>
+      <ion-label>Date Time Restrictions</ion-label>
+    </ion-list-header>
+    <ion-list>
+      <ion-item>
+        <ion-label>Birth Date Grid</ion-label>
+        <ion-datetime-button datetime="datetime2"></ion-datetime-button>
+        <ion-modal [keepContentsMounted]="true">
+          <ng-template>
+            <ion-datetime
+              id="datetime2"
+              min="2015-01-01"
+              max="2025-12-31"
+              (ionChange)="dateChange($event)"
+            ></ion-datetime>
+          </ng-template>
+        </ion-modal>
+      </ion-item>
+      <ion-item>
+        <ion-label>Birth Date Wheel</ion-label>
+        <ion-datetime-button datetime="datetime3"></ion-datetime-button>
+        <ion-modal [keepContentsMounted]="true">
+          <ng-template>
+            <ion-datetime
+              id="datetime3"
+              min="2015-01-01"
+              max="2025-12-31"
+              [preferWheel]="true"
+              (ionChange)="dateChange($event)"
+            ></ion-datetime>
+          </ng-template>
+        </ion-modal>
+      </ion-item>
+      <ion-item>
+        <ion-label>Years</ion-label>
+        <ion-datetime-button
+          datetime="datetime4"
+          displayFormat="YYYY"
+        ></ion-datetime-button>
+        <ion-modal [keepContentsMounted]="true">
+          <ng-template>
+            <ion-datetime
+              id="datetime4"
+              min="2015-01-01"
+              max="2025-12-31"
+              presentation="year"
+              (ionChange)="dateChange($event)"
+            ></ion-datetime>
+          </ng-template>
+        </ion-modal>
+      </ion-item>
+      <ion-item>
+        <ion-label>Custom Options</ion-label>
+        <ion-datetime-button
+          datetime="datetime5"
+          displayFormat="YYYY"
+        ></ion-datetime-button>
+        <ion-modal [keepContentsMounted]="true">
+          <ng-template>
+            <ion-datetime
+              id="datetime5"
+              (ionChange)="dateChange($event)"
+              [yearValues]="customYearValues"
+            ></ion-datetime>
+          </ng-template>
+        </ion-modal>
+      </ion-item>
+    </ion-list>
+  </ion-list>
+</ion-content>
